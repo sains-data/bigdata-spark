@@ -154,10 +154,8 @@ Berikut ini jika ingin memeriksa hive dan hbase, jika tidak bisa dilewatkan saja
 
    Detail Akses GUI Hive:
 
-   | Komponen HBase       | Port  | URL Akses                   |
+   | Komponen Hive      | Port  | URL Akses                   |
    |-----------------------|-------|-----------------------------|
-   | **Hive Metastore**    | 10000 | jdbc:hive2://localhost:10001 |
-   | **Hive Server 2**     | 10001 | jdbc:hive2://localhost:10001 |
    | **Hive Web UI**       | 10002 | http://localhost:10002       |
 
 18. **Keluar dari Koneksi Hive**
@@ -195,7 +193,7 @@ Berikut ini jika ingin memeriksa hive dan hbase, jika tidak bisa dilewatkan saja
 
    Detail Akses GUI SPARK:
 
-   | Komponen HBase       | Port  | URL Akses                   |
+   | Komponen SPARK      | Port  | URL Akses                   |
    |-----------------------|-------|-----------------------------|
    | **SPARK UI**         | 4040  | http://localhost:4040       |
 
