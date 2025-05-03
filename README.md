@@ -252,9 +252,9 @@ Berikut ini cara untuk keluar dari root bash dan menghentikan container
 | 3888  | Leader election          |
 
 ### SPARK
-| Port  | Service  |
-|-------|----------|
-| 4040  | SPARK UI    |
+| Port  | Service  | URL                |
+|-------|----------|--------------------|
+| 4040  | SPARK UI | http://localhost:4040 |
 
 ### Lainnya
 | Port  | Service  |
