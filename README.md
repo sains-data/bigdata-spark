@@ -152,6 +152,14 @@ Berikut ini jika ingin memeriksa hive dan hbase, jika tidak bisa dilewatkan saja
    Cek juga antarmuka web GUI Hiveserver di:  
    [http://localhost:10002](http://localhost:10002).
 
+   Detail Akses GUI Hive:
+
+   | Komponen HBase       | Port  | URL Akses                   |
+   |-----------------------|-------|-----------------------------|
+   | **Hive Metastore**    | 10000 | jdbc:hive2://localhost:10001 |
+   | **Hive Server 2**     | 10001 | jdbc:hive2://localhost:10001 |
+   | **Hive Web UI**       | 10002 | http://localhost:10002       |
+
 18. **Keluar dari Koneksi Hive**
    Setelah selesai, tekan `Ctrl + C` untuk keluar dari koneksi Beeline.
 
@@ -170,6 +178,7 @@ Berikut ini jika ingin memeriksa hive dan hbase, jika tidak bisa dilewatkan saja
    | **HBase Master UI**   | 16010 | http://localhost:16010      |
    | **HBase REST API**    | 16030 | http://localhost:16030      |
 
+
 20. **Keluar dari hbase**
    Setelah keluar dari hbase shell, ketik:
    ```bash
@@ -183,6 +192,12 @@ Berikut ini jika ingin memeriksa hive dan hbase, jika tidak bisa dilewatkan saja
    spark-shell
    ```
    tunggu sampai muncul logo spark 3.5.5
+
+   Detail Akses GUI SPARK:
+
+   | Komponen HBase       | Port  | URL Akses                   |
+   |-----------------------|-------|-----------------------------|
+   | **SPARK UI**         | 4040  | http://localhost:4040       |
 
    untuk keluar dari spark-shell maka ketik `CTRL + C` di keyboard, lalu kita akan masuk ke root bash
 
