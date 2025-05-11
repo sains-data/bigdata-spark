@@ -111,9 +111,9 @@ filteredDF.write.parquet("/path/to/filtered_data.parquet")
 | **Kecepatan Baca** | Cepat (hanya baca kolom diperlukan) | Lambat (baca seluruh file)  |
 | **Schema**         | Disimpan dalam file                 | Harus diinferensi           |
 
-## **Query Langsung, Partitioning, dan Membaca Partisi di Parquet**
-
 ---
+
+## **Query Langsung, Partitioning, dan Membaca Partisi di Parquet**
 
 ### **1. Direct Queries on Parquet Files (Query Langsung Tanpa Load ke DataFrame)**
 Spark memungkinkan query langsung ke file Parquet **tanpa memuatnya ke memori** terlebih dahulu, mirip dengan query SQL di database.
