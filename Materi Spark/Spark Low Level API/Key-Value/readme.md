@@ -481,7 +481,8 @@ print(right_joined_rdd.collect())
 | `rightOuterJoin()`   | Semua kunci dari RDD kanan + nilai kiri (jika ada) | `RIGHT JOIN` |  
 | `fullOuterJoin()`    | Semua kunci dari kedua RDD (jika ada) | `FULL OUTER JOIN` |  
 
-**Kapan Menggunakan Join di RDD?**  
+**Kapan Menggunakan Join di RDD?**
+
 ✅ **Menggabungkan dataset dengan kunci yang sama**  
 ✅ **Analisis data relasional (seperti tabel database)**  
 ✅ **Data enrichment (misal: menggabungkan data user dengan data transaksi)**  
@@ -645,6 +646,7 @@ print(values)
 | `lookup(key)`        | Ambil semua value untuk key tertentu       | `[75, 35]` (jika key="PySpark")       |
 
 **Kapan Menggunakan Actions Ini?**
+
 ✅ `countByKey()` → Analisis distribusi key (e.g., "Berapa banyak transaksi per user?")  
 ✅ `countByValue()` → Deteksi duplikat atau frekuensi data unik.  
 ✅ `collectAsMap()` → Konversi RDD kecil ke dictionary untuk pemrosesan lokal.  
@@ -696,17 +698,20 @@ Meskipun **DataFrame dan Dataset** (API tingkat tinggi Spark) umumnya lebih disu
 
 
 ### **Kapan Memilih RDD?**  
+
 ✅ Butuh kontrol penuh partisi & distribusi data  
 ✅ Membuat algoritma kustom (misal: machine learning, graf)  
 ✅ Bekerja dengan data tidak terstruktur (raw text, sensor data)  
 ✅ Mempertahankan kode Spark lama  
 
-### **Kapan Lebih Baik Pakai DataFrame/Dataset?**  
+### **Kapan Lebih Baik Pakai DataFrame/Dataset?** 
+
 ✔ Analisis data berbasis kolom (seperti SQL)  
 ✔ Butuh performa tinggi (Catalyst & Tungsten optimizations)
 ✔ Ingin skema jelas & type safety (Dataset di Scala) 
 
 ## **Penutup**  
+
 - Gunakan RDD untuk kebutuhan low-level atau data tidak terstruktur.  
 - Pilih DataFrame/Dataset untuk analisis data tradisional & performa optimal.  
 - RDD masih relevan dalam skenario khusus, tetapi umumnya DataFrame lebih efisien.  
