@@ -101,7 +101,7 @@ RDD dapat dibuat dari berbagai sumber eksternal yang kompatibel dengan Hadoop, s
 * Format lain yang didukung Hadoop
 
 
-### 🧾 **1. Membaca File Teks (textFile)**
+### **1. Membaca File Teks (textFile)**
 
 **Scala:**
 
@@ -115,7 +115,7 @@ val readmeFile = sc.textFile("/YOUR/SPARK/HOME/README.md")
 readme_file = sc.textFile("/YOUR/SPARK/HOME/README.md")
 ```
 
-🔸 Untuk file di sistem file terdistribusi (HDFS, S3, GCS):
+Untuk file di sistem file terdistribusi (HDFS, S3, GCS):
 
 **Scala:**
 
@@ -206,9 +206,9 @@ val rdd = sc.sequenceFile[String, Int]("/input/path")
 rdd = sc.sequenceFile("/input/path", "org.apache.hadoop.io.Text", "org.apache.hadoop.io.IntWritable")
 ```
 
-### 💾 **6. Menyimpan dan Memuat RDD sebagai Objek**
+### **6. Menyimpan dan Memuat RDD sebagai Objek**
 
-🔸 **Menyimpan sebagai Object File**
+**Menyimpan sebagai Object File**
 
 **Scala:**
 
@@ -224,7 +224,7 @@ data = sc.parallelize(["España", "México", "Colombia"])
 data.saveAsPickleFile("/tmp/SpanishCountries")
 ```
 
-🔸 **Membaca kembali**
+**Membaca kembali**
 
 **Scala:**
 
