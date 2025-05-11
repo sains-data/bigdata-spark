@@ -240,7 +240,7 @@ newlist = sc.pickleFile("/tmp/SpanishCountries")
 
 ## 3. **Membuat RDD dari RDD yang Ada**
 
-### 🗣️ **Immutabilitas RDD**
+### **Immutabilitas RDD**
 
 * RDD (Resilient Distributed Dataset) bersifat **immutable**, yang berarti kita tidak dapat mengubah data yang ada dalam RDD secara langsung.
 * Namun, kita bisa **membuat RDD baru** dengan menerapkan **transformasi** pada RDD yang sudah ada.
