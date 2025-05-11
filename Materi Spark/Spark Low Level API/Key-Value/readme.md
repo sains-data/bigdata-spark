@@ -707,7 +707,7 @@ Meskipun **DataFrame dan Dataset** (API tingkat tinggi Spark) umumnya lebih disu
 ### **Kapan Lebih Baik Pakai DataFrame/Dataset?** 
 
 ✔ Analisis data berbasis kolom (seperti SQL)  
-✔ Butuh performa tinggi (Catalyst & Tungsten optimizations)
+✔ Butuh performa tinggi (Catalyst & Tungsten optimizations) 
 ✔ Ingin skema jelas & type safety (Dataset di Scala) 
 
 ## **Penutup**  
