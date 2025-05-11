@@ -362,3 +362,159 @@ fs.delete(success_file, True)
 - Hindari `coalesce(1)` untuk dataset sangat besar.  
 - Jika perlu file tunggal tanpa metadata, pertimbangkan **pemrosesan pasca-Spark** (misal: `hadoop fs -getmerge`).
 
+## Penutup
+
+Selanjutnya akan di bahas Apache Spark DataFrame untuk I/O (input/output)
+
+Spark DataFrame mendukung berbagai format dan sumber data untuk **membaca (read)** dan **menulis (write)** data secara efisien, termasuk Parquet, JSON, CSV, Hive, dan JDBC.
+
+---
+
+### 1. Read and Write Apache Parquet Files
+
+Keunggulan:
+
+* Format kolumnar
+* Kompresi tinggi & efisiensi baca
+
+Contoh:
+
+```python
+# Read
+df = spark.read.parquet("data/file.parquet")
+
+# Write
+df.write.parquet("output/path")
+```
+
+---
+
+### 2. Read and Write JSON Files with Spark
+
+Keunggulan:
+
+* Format fleksibel dan umum digunakan
+* Mendukung struktur nested
+
+Contoh:
+
+```python
+# Read
+df = spark.read.json("data/file.json")
+
+# Write
+df.write.json("output/json")
+```
+
+---
+
+### 3. Reading Multiple JSON Files at Once
+
+Contoh:
+
+```python
+df = spark.read.json(["file1.json", "file2.json", "file3.json"])
+```
+
+---
+
+### 4. Reading JSON Files Based on Patterns at Once
+
+Contoh:
+
+```python
+df = spark.read.json("data/*.json")  # Semua file JSON dalam folder
+df = spark.read.json("data/file*.json")  # Berdasarkan pola nama
+```
+
+---
+
+### 5. Work with Complex Nested JSON Structures Using Spark
+
+Tips:
+
+* Gunakan `explode()` untuk array
+* Gunakan `select("col.subcol")` atau `df.withColumn()` untuk nested fields
+
+Contoh:
+
+```python
+from pyspark.sql.functions import explode
+
+df = spark.read.json("data/nested.json")
+df.select("user.name", "user.age").show()
+df.select(explode("user.hobbies")).show()
+```
+
+---
+
+### 6. Read and Write CSV Files with Spark
+
+Opsi:
+
+* `header=True`, `inferSchema=True`, `delimiter`
+
+Contoh:
+
+```python
+# Read
+df = spark.read.option("header", True).csv("data/file.csv")
+
+# Write
+df.write.option("header", True).csv("output/csv")
+```
+
+---
+
+## 7. Read and Write Hive Tables
+
+Syarat:
+
+* Spark harus terkonfigurasi dengan Hive Support
+
+Contoh:
+
+```python
+# Read
+df = spark.sql("SELECT * FROM db.table")
+
+# Write
+df.write.saveAsTable("db.new_table")
+```
+
+---
+
+## 8. Read and Write Data via JDBC from and to Databases
+
+Opsi Umum:
+
+* `url`, `dbtable`, `user`, `password`, `driver`
+
+Contoh:
+
+```python
+# Read
+df = spark.read.format("jdbc").options(
+    url="jdbc:mysql://localhost:3306/db",
+    driver="com.mysql.jdbc.Driver",
+    dbtable="table_name",
+    user="root",
+    password="secret"
+).load()
+
+# Write
+df.write.format("jdbc").options(
+    url="jdbc:mysql://localhost:3306/db",
+    driver="com.mysql.jdbc.Driver",
+    dbtable="new_table",
+    user="root",
+    password="secret"
+).mode("overwrite").save()
+```
+
+---
+
+Catatan:
+
+* Gunakan `.mode("overwrite")`, `.mode("append")`, `.mode("ignore")`, atau `.mode("error")` saat menulis.
+* Gunakan `.schema()` jika ingin menentukan skema secara eksplisit sebelum membaca data.
