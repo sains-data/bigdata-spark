@@ -486,12 +486,12 @@ showDF(df)
 * **Transformations** adalah operasi yang **menghasilkan RDD/DataFrame baru** dari input RDD/DataFrame.
 
 Example of a transformations lineage
-![](/Picture/transformation-lineage.jpg)
+![](https://github.com/sains-data/bigdata-spark/blob/main/Materi%20Spark/Picture/transformation-lineage.jpg)
 
 * **Tidak langsung dieksekusi**, tetapi hanya dicatat dalam DAG (Directed Acyclic Graph) — inilah yang disebut **lazy evaluation**.
 
 An example of a Directed Acyclic Graph
-![](/Picture/DAG.jpg)
+![](https://github.com/sains-data/bigdata-spark/blob/main/Materi%20Spark/Picture/DAG.jpg)
 
 * **Transformations tidak men-trigger eksekusi** hingga sebuah action dipanggil.
 
@@ -514,10 +514,10 @@ An example of a Directed Acyclic Graph
 | **Wide**   | Melibatkan data shuffling antar partisi (lebih mahal biayanya) | `groupByKey()`, `join()`, `distinct()`, `repartition()` |
 
 - Narrow
-![](/Picture/narrow-transformation.jpg)
+![](https://github.com/sains-data/bigdata-spark/blob/main/Materi%20Spark/Picture/narrow-transformation.jpg)
 
 - Wide
-![](/Picture/wide-transformation.jpg)
+![](https://github.com/sains-data/bigdata-spark/blob/main/Materi%20Spark/Picture/wide-transformation.jpg)
 
 
 ### 💤 Lazy Evaluation
